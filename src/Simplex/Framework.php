@@ -24,7 +24,7 @@ class Framework
         $this->matcher->getContext()->fromRequest($request);
 
         try {
-            $request->attributes->add($this->matcher->match($request->getPathInfo());
+            $request->attributes->add($this->matcher->match($request->getPathInfo()));
             $controller = $this->resolver->getController($request);
             $arguments = $this->resolver->getArguments($request, $controller);
 
