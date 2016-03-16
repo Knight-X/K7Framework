@@ -17,8 +17,6 @@ $routes->add('hello', new Routing\Route('/hello/{name}', array(
     }
 )));
 
-$routes->add('bye', new Routing\Route('/bye'));
-
 $routes->add('leap_year', new Routing\Route('/is_leap_year/{year}', array(
     'yaer' => null,
     '_controller' => 'Calendar\\Controller\\LeapYearController::indexAction', 
