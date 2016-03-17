@@ -8,6 +8,10 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Routing;
 use Symfony\Component\HttpKernel;
 
+$context = new Routing\RequestContext();
+$matcher = new Routing\Matcher\UrlMatcher($routes, $context);
+$resolver = new HttpKernel\Controller\ControllerResolver();
+
 $dispatcher = new EventDispatcher();
 $dispatcher->addListener('response', function (Simplex\ResponseEvent $event) {
     $response = $event->getResponse();
